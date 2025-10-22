@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Automation For Professional Services - Use n8n, Low Cost, Fast Implementation">
+    <meta name="keywords" content="AI Automation, Professional Services, n8n, Remote Team">
+    <meta name="author" content="AI Automation">
+    <meta property="og:title" content="AI Automation For Professional Services">
+    <meta property="og:description" content="Transform your professional services with AI automation. Remote team, no lock-in contract, best rates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aia.com">
+    <title>AI Automation - Professional Services Automation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1f2937;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 0;
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-card-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold text-gray-900">AI Automation</span>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-menu flex space-x-8" id="navMenu">
+                <a href="#features" class="text-gray-700 hover:text-purple-600 smooth-transition font-medium">Features</a>
+                <a href="#benefits" class="text-gray-700 hover:text-purple-600 smooth-transition font-medium">Benefits</a>
+                <a href="#faq" class="text-gray-700 hover:text-purple-600 smooth-transition font-medium">FAQ</a>
+                <a href="#contact" class="text-gray-700 hover:text-purple-600 smooth-transition font-medium">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 md:py-32 lg:py-40 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 z-0"></div>
+        <div class="absolute top-20 right-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full">
+                    <span class="text-sm font-semibold text-purple-700">Powered by Claude (Anthropic)</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+                    <span class="gradient-text">AI Automation</span>
+                    <span class="block text-gray-900">For Professional Services</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+                    Transform your professional services with intelligent automation. Scale your operations without scaling your costs.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <a href="https://aia.com" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg smooth-transition hover-lift hover:from-purple-700 hover:to-blue-700 transform">
+                        Get Started Now
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#features" class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:border-purple-600 hover:text-purple-600 smooth-transition hover-lift">
+                        Learn More
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need to automate your professional services workflow</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+                <!-- Feature 1: n8n Integration -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl smooth-transition hover-lift">
+                    <div class="feature-card-content">
+                        <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-link text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">n8n Integration</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Connect and automate your entire workflow with n8n's powerful no-code automation platform. Seamless integration with hundreds of applications.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <span class="text-sm font-semibold text-purple-600">Advanced Automation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2: Low Cost -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl smooth-transition hover-lift">
+                    <div class="feature-card-content">
+                        <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-coins text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Low Cost</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Eliminate expensive software licenses and infrastructure costs. Our pricing model scales with your business, not against it.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <span class="text-sm font-semibold text-green-600">Cost Efficient</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3: Fast Implementation -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl p-8 hover:shadow-xl smooth-transition hover-lift">
+                    <div class="feature-card-content">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Fast Implementation</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Get up and running in days, not months. Our streamlined onboarding process ensures you see results immediately.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <span class="text-sm font-semibold text-blue-600">Quick Deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose AI Automation</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Experience the benefits that transform professional services firms</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+                <!-- Benefit 1: Remote Team -->
+                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg smooth-transition">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100">
+                                <i class="fas fa-globe text-blue-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Remote Team Enabled</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Empower your distributed team with tools that work anywhere. Collaborate seamlessly across time zones and locations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 2: No Lock-in Contract -->
+                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg smooth-transition">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100">
+                                <i class="fas fa-unlock text-green-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">No Lock-in Contract</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Complete flexibility with month-to-month agreements. Cancel anytime with no penalties or hidden fees. Your choice, your control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 3: Best Rates -->
+                <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg smooth-transition">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-100">
+                                <i class="fas fa-star text-purple-600 text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Best Rates in Industry</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Competitive pricing without compromising on quality. Get enterprise-level automation at SMB-friendly costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Benefits Grid -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mt-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Dedicated Support</h4>
+                        <p class="text-gray-600">Access our expert team whenever you need assistance. Priority support included with all plans.</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mt-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Scalable Infrastructure</h4>
+                        <p class="text-gray-600">Grow without limits. Our platform scales automatically as your business expands.</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mt-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Security First</h4>
+                        <p class="text-gray-600">Enterprise-grade security and compliance. Your data is protected with industry-leading standards.</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mt-1"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Analytics & Reporting</h4>
+                        <p class="text-gray-600">Real-time insights into your automation performance and ROI metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-20 md:py-28 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style="background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop');" alt="Professional workspace"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
+                    Join professional services firms already saving time and money with AI Automation. Start your free trial today.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <a href="https://aia.com" class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg hover:shadow-lg smooth-transition hover-lift hover:bg-gray-50 transform">
+                        Start Free Trial
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 smooth-transition hover-lift">
+                        Schedule Demo
+                        <i class="fas fa-calendar ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 md:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Find answers to common questions about AI Automation</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>What is n8n and why do we use it?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            n8n is a powerful open-source workflow automation platform that allows us to connect hundreds of applications without writing code. We use it because it's flexible, cost-effective, and enables rapid deployment of automation workflows tailored to your specific business needs.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>How long does implementation take?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            Most implementations are completed within 5-15 days depending on complexity. Our streamlined onboarding process, combined with pre-built templates for common professional services workflows, ensures rapid deployment. You can start seeing ROI within the first month.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>Can I cancel anytime?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            Yes, absolutely. We offer month-to-month agreements with no lock-in contracts. You can cancel anytime with 30 days notice and no penalties. We're confident in our service and want your continued partnership to be based on value, not obligation.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>What about security and data privacy?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            Security is our top priority. We implement enterprise-grade encryption, SOC 2 compliance, regular security audits, and GDPR compliance. Your data is stored securely and never accessed without explicit permission. We maintain strict data residency policies and offer detailed security documentation.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>How much can we save with AI Automation?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            Most professional services firms see 30-50% reduction in manual work hours within the first three months. Average ROI is achieved within 6 months. Specific savings depend on your current workflows, but we provide detailed ROI analysis during the discovery phase to show you exactly what you'll save.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md smooth-transition">
+                    <button class="accordion-toggle w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 smooth-transition" onclick="toggleAccordion(this)">
+                        <span>Do you provide training and support?</span>
+                        <i class="fas fa-chevron-down text-purple-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-200">
+                            Yes, comprehensive support is included. We provide onboarding training, documentation, video tutorials, and dedicated support channels. Our support team is available to help with questions, troubleshooting, and optimization. Premium plans include priority support and quarterly business reviews.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-200">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                    <p class="text-lg text-gray-600">Have questions? Our team is here to help.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- Email -->
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3>
+                        <a href="mailto:admin@aia.com" class="text-purple-600 hover:text-purple-700 smooth-transition font-medium">
+                            admin@aia.com
+                        </a>
+                    </div>
+                    
+                    <!-- Website -->
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-globe text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Website</h3>
+                        <a href="https://aia.com" class="text-blue-600 hover:text-blue-700 smooth-transition font-medium">
+                            aia.com
+                        </a>
+                    </div>
+                    
+                    <!-- Response Time -->
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Response Time</h3>
+                        <p class="text-gray-600 font-medium">
+                            Within 24 hours
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 smooth-transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 smooth-transition" placeholder="john@company.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-semibold text-gray-900 mb-2">Company Name</label>
+                        <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 smooth-transition" placeholder="Your Company">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 smooth-transition resize-none" placeholder="Tell us about your automation needs..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:shadow-lg smooth-transition hover-lift hover:from-purple-700 hover:to-blue-700 transform">
+                        Send Message
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="mt-6 hidden p-4 rounded-lg text-center font-medium"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">AI Automation</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Transforming professional services with intelligent automation powered by Claude.
+                    </p>
+                </div>
+                
+                <!-- Product -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white smooth-transition">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white smooth-transition">Benefits</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Pricing</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white smooth-transition">Contact</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Careers</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Privacy Policy</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Terms of Service</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Security</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-8"></div>
+            
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-sm text-gray-400">
+                    &copy; 2024 AI Automation. All rights reserved. Powered by Claude (Anthropic).
+                </p>
+                
+                <div class="flex space-x-6">
+                    <a href="https://twitter.com" aria-label="Twitter" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://github.com" aria-label="GitHub" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://facebook.com" aria-label="Facebook" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Accordion Toggle
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content.active').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+        
+        // Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formMessage = document.getElementById('formMessage');
+            const form = event.target;
+            
+            // Simulate form submission
+            formMessage.className = 'mt-6 p-4 rounded-lg text-center font-medium bg-green-100 text-green-700 flex items-center justify-center';
+            formMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Thank you! We\'ll be in touch within 24 hours.';
+            formMessage.classList.remove('hidden');
+            
+            // Reset form
+            form.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        }
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .accordion-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
