@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Complete Guide to AI Automation for Professional Services - Learn how to implement intelligent automation using n8n and Claude AI">
+    <meta name="keywords" content="AI Automation, Professional Services, n8n, Claude AI, Workflow Automation, Business Process Automation">
+    <meta name="author" content="AI Automation">
+    <meta property="og:title" content="The Complete Guide to AI Automation for Professional Services">
+    <meta property="og:description" content="Discover how to transform your professional services firm with AI automation. Learn best practices, implementation strategies, and ROI calculations.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://test-acc-12349.github.io/ai-automation-2025-10-22-td2dv/blog.html">
+    <title>The Complete Guide to AI Automation for Professional Services | AI Automation Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1f2937;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                z-index: 50;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+        
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 0;
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-content p {
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            color: #4b5563;
+            margin-bottom: 1.25rem;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.25rem;
+            margin-left: 1.5rem;
+        }
+
+        .blog-content li {
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content strong {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .blog-content em {
+            font-style: italic;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center justify-between w-full">
+                <a href="https://test-acc-12349.github.io/ai-automation-2025-10-22-td2dv" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">AI Automation</span>
+                </a>
+                <a href="https://test-acc-12349.github.io/ai-automation-2025-10-22-td2dv" class="text-gray-700 hover:text-purple-600 smooth-transition font-medium">
+                    ← Back
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Content Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Blog Header -->
+            <div class="mb-8 md:mb-12">
+                <div class="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                    <span class="text-sm font-semibold text-purple-700">Professional Services</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                    The Complete Guide to AI Automation for Professional Services
+                </h1>
+                <div class="flex flex-col md:flex-row md:items-center md:space-x-6 text-gray-600 mb-8">
+                    <span class="flex items-center space-x-2 mb-2 md:mb-0">
+                        <i class="fas fa-calendar text-purple-600"></i>
+                        <span>Published on January 15, 2024</span>
+                    </span>
+                    <span class="flex items-center space-x-2 mb-2 md:mb-0">
+                        <i class="fas fa-clock text-purple-600"></i>
+                        <span>8 min read</span>
+                    </span>
+                    <span class="flex items-center space-x-2">
+                        <i class="fas fa-user text-purple-600"></i>
+                        <span>By AI Automation Team</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=675&fit=crop" alt="Professional team collaborating on AI automation workflow" class="w-full rounded-lg shadow-lg mb-12">
+
+            <!-- Blog Content -->
+            <article class="blog-content prose prose-lg max-w-none">
+                <p>
+                    In today's competitive landscape, professional services firms face unprecedented pressure to deliver more value with fewer resources. Client expectations continue to rise, operational costs keep climbing, and talented staff are increasingly difficult to retain. The solution? <strong>AI automation</strong> powered by intelligent workflow platforms and advanced language models.
+                </p>
+
+                <p>
+                    This comprehensive guide explores how professional services firms can leverage AI automation to transform their operations, increase profitability, and create better client experiences. Whether you're a consulting firm, accounting practice, law office, or engineering company, the principles and strategies outlined here will help you understand how to implement automation effectively.
+                </p>
+
+                <h2>Understanding AI Automation in Professional Services</h2>
+
+                <p>
+                    AI automation combines artificial intelligence with workflow automation to handle repetitive, time-consuming tasks that currently consume significant billable hours. Unlike traditional automation, which follows rigid rules, AI-powered automation can understand context, learn from patterns, and adapt to variations in data and processes.
+                </p>
+
+                <p>
+                    For professional services firms, this means automating tasks like:
+                </p>
+
+                <ul>
+                    <li>Document review and contract analysis</li>
+                    <li>Client intake and onboarding workflows</li>
+                    <li>Time tracking and invoice generation</li>
+                    <li>Meeting notes transcription and summarization</li>
+                    <li>Research compilation and literature reviews</li>
+                    <li>Email triage and response drafting</li>
+                    <li>Project status reporting and updates</li>
+                    <li>Compliance checklist completion</li>
+                </ul>
+
+                <p>
+                    The beauty of AI automation is that it doesn't replace your team—it amplifies their capabilities. By handling routine work, your professionals can focus on high-value activities that require human judgment, creativity, and client interaction.
+                </p>
+
+                <h2>Why n8n is the Ideal Platform for Professional Services</h2>
+
+                <p>
+                    When implementing AI automation, choosing the right platform is critical. <strong>n8n</strong> has emerged as the leading choice for professional services firms, and here's why:
+                </p>
+
+                <p>
+                    <em>Open-Source Architecture:</em> Unlike proprietary platforms, n8n's open-source nature means you're not locked into a vendor. You maintain control over your automation infrastructure and can customize it to your exact specifications.
+                </p>
+
+                <p>
+                    <em>Extensive Integration Library:</em> n8n connects with over 400 applications out of the box. Whether you use Salesforce for CRM, Jira for project management, Slack for communication, or specialized legal software, n8n can integrate with it.
+                </p>
+
+                <p>
+                    <em>Low-Code Interface:</em> Your team doesn't need to be engineers to build workflows. The visual workflow builder makes it easy for business users to create, test, and deploy automations without writing code.
+                </p>
+
+                <p>
+                    <em>Cost-Effectiveness:</em> n8n's pricing model is significantly more affordable than competing platforms, especially for larger-scale deployments. You pay for what you use without enterprise licensing fees.
+                </p>
+
+                <p>
+                    <em>AI Integration:</em> n8n seamlessly integrates with Claude and other AI models, enabling intelligent decision-making within your workflows.
+                </p>
+
+                <h2>The Role of Claude AI in Automation</h2>
+
+                <p>
+                    Claude, Anthropic's advanced language model, brings sophisticated reasoning capabilities to automation workflows. Unlike simpler AI tools, Claude excels at complex tasks that require understanding nuance, context, and detailed requirements.
+                </p>
+
+                <p>
+                    In professional services, Claude can:
+                </p>
+
+                <ul>
+                    <li><strong>Analyze Complex Documents:</strong> Review contracts, proposals, and reports, extracting key information and identifying potential issues.</li>
+                    <li><strong>Generate Professional Communications:</strong> Draft client emails, proposals, and status reports that maintain your firm's tone and quality standards.</li>
+                    <li><strong>Conduct Research Synthesis:</strong> Aggregate information from multiple sources and create comprehensive research summaries.</li>
+                    <li><strong>Perform Compliance Checks:</strong> Review documents against regulatory requirements and internal policies.</li>
+                    <li><strong>Facilitate Decision-Making:</strong> Analyze data and provide recommendations based on your firm's criteria and historical patterns.</li>
+                </ul>
+
+                <p>
+                    The key advantage of Claude is its ability to understand context and maintain consistency with your firm's standards, making the automation feel like an extension of your team rather than a robotic process.
+                </p>
+
+                <h2>Implementation Strategy: A Phased Approach</h2>
+
+                <p>
+                    Successful AI automation implementation doesn't happen overnight. A phased approach minimizes disruption while maximizing learning and ROI.
+                </p>
+
+                <h3>Phase 1: Assessment and Discovery (Weeks 1-2)</h3>
+
+                <p>
+                    Start by mapping your current processes. Identify which tasks consume the most time, create the most errors, or represent the best opportunities for improvement. Interview team members to understand pain points and gather requirements.
+                </p>
+
+                <p>
+                    Calculate the cost of these processes. If an associate spends 10 hours per week on document review, and their fully-loaded cost is $150/hour, that's $78,000 annually. Automating just 50% of that work delivers $39,000 in annual savings.
+                </p>
+
+                <h3>Phase 2: Pilot Implementation (Weeks 3-6)</h3>
+
+                <p>
+                    Start with a single, high-impact workflow. This might be your client intake process, invoice generation, or meeting note summarization. Implement the automation with a subset of your team to gather feedback and refine the process.
+                </p>
+
+                <p>
+                    During this phase, you'll learn what works, what needs adjustment, and how your team responds to working with AI-assisted tools. This is invaluable for scaling to additional processes.
+                </p>
+
+                <h3>Phase 3: Refinement and Expansion (Weeks 7-12)</h3>
+
+                <p>
+                    Based on pilot learnings, refine the initial automation and expand to additional team members. Begin implementing your second and third automation workflows. By now, your team understands the technology and can provide more sophisticated feedback.
+                </p>
+
+                <h3>Phase 4: Full Deployment (Months 4+)</h3>
+
+                <p>
+                    Roll out automations across your entire organization. By this point, you have proven processes, trained staff, and clear ROI metrics. Continue identifying new automation opportunities and building on your success.
+                </p>
+
+                <h2>Calculating Your ROI</h2>
+
+                <p>
+                    Professional services firms operate on margin-based economics. Every hour of billable time that doesn't go to client work is lost revenue. AI automation directly impacts your bottom line in multiple ways:
+                </p>
+
+                <p>
+                    <strong>Direct Time Savings:</strong> Automation reduces hours spent on routine tasks. If you save 100 billable hours per month, that's 1,200 hours annually—equivalent to 0.6 FTEs.
+                </p>
+
+                <p>
+                    <strong>Improved Utilization:</strong> Your professionals spend more time on billable work rather than administrative tasks, improving your utilization rate and revenue per employee.
+                </p>
+
+                <p>
+                    <strong>Reduced Errors:</strong> Automated processes are more consistent, reducing rework and client dissatisfaction. This translates to fewer discounts, better retention, and improved reputation.
+                </p>
+
+                <p>
+                    <strong>Faster Delivery:</strong> Clients appreciate faster turnaround times. Automation enables you to deliver projects more quickly, improving client satisfaction and enabling higher pricing.
+                </p>
+
+                <p>
+                    <strong>Scalability Without Headcount:</strong> Grow your revenue without proportionally increasing your headcount. This dramatically improves profitability.
+                </p>
+
+                <p>
+                    Most professional services firms see positive ROI within 3-6 months of implementation. The cost of implementing AI automation is typically recovered through a combination of these factors within this timeframe.
+                </p>
+
+                <h2>Addressing Common Concerns</h2>
+
+                <h3>Will AI Automation Replace My Team?</h3>
+
+                <p>
+                    No. AI automation handles routine, repetitive tasks—the work that professionals find least satisfying. Your team can focus on complex problem-solving, client relationships, and strategic work. In fact, firms that implement automation effectively often find they need to hire more professionals to handle increased capacity, not fewer.
+                </p>
+
+                <h3>What About Data Security?</h3>
+
+                <p>
+                    Data security is paramount in professional services. n8n can be deployed on your own infrastructure, ensuring your data never leaves your control. Claude API connections are encrypted and comply with industry standards. Your automation platform should offer SOC 2 compliance, data encryption, and audit trails—all standard with proper implementation.
+                </p>
+
+                <h3>How Long Does Implementation Take?</h3>
+
+                <p>
+                    A typical first automation can be implemented in 2-4 weeks. Subsequent automations are faster as your team learns the platform. Most firms see their first automations in production within 30-45 days of starting.
+                </p>
+
+                <h3>What If Our Processes Are Unique?</h3>
+
+                <p>
+                    Every firm has unique processes, and that's exactly why n8n's flexibility is valuable. The platform can be customized to match your specific workflows rather than forcing you to change your processes to fit the software.
+                </p>
+
+                <h2>Best Practices for Success</h2>
+
+                <p>
+                    Based on successful implementations across dozens of professional services firms, here are key best practices:
+                </p>
+
+                <ul>
+                    <li><strong>Start with Quick Wins:</strong> Choose your first automation for impact and ease, not complexity. Success builds momentum and buy-in.</li>
+                    <li><strong>Involve Your Team:</strong> Get input from the people doing the work. They understand the nuances and edge cases that matter.</li>
+                    <li><strong>Measure Everything:</strong> Track time saved, error reduction, and quality improvements. Data builds the case for continued investment.</li>
+                    <li><strong>Iterate Continuously:</strong> Automation isn't "set and forget." Regularly review and refine your workflows as your processes evolve.</li>
+                    <li><strong>Invest in Training:</strong> Your team needs to understand how to work with automation and how to monitor for issues.</li>
+                    <li><strong>Maintain Quality Standards:</strong> Automation should never compromise the quality your clients expect. Build in review steps and quality checks.</li>
+                    <li><strong>Plan for Scale:</strong> Design your automations to handle growth. What works for 10 clients should work for 100.</li>
+                </ul>
+
+                <h2>The Future of Professional Services</h2>
+
+                <p>
+                    AI automation is no longer a competitive advantage—it's becoming table stakes in professional services. Firms that embrace automation will find themselves with significant advantages in profitability, client satisfaction, and employee retention.
+                </p>
+
+                <p>
+                    The firms that will thrive in the next decade are those that recognize that technology amplifies human capability rather than replacing it. By combining your team's expertise and judgment with AI automation's efficiency and consistency, you create a powerful combination that's difficult to compete against.
+                </p>
+
+                <p>
+                    The question isn't whether to implement AI automation—it's when. The sooner you start, the sooner you'll realize the benefits and establish a competitive advantage in your market.
+                </p>
+
+                <h2>Getting Started Today</h2>
+
+                <p>
+                    Ready to explore AI automation for your firm? Start by conducting a process audit. Identify your top 5 time-consuming tasks and calculate their cost. Then, reach out to discuss which processes would be the best candidates for automation.
+                </p>
+
+                <p>
+                    The journey to AI-powered professional services begins with a single step. Take that step today and discover how automation can transform your firm's future.
+                </p>
+            </article>
+
+            <!-- Author Bio -->
+            <div class="mt-16 pt-8 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row md:items-start md:space-x-6">
+                    <div class="w-24 h-24 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mb-4 md:mb-0 flex-shrink-0">
+                        <i class="fas fa-user text-white text-4xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">About the Author</h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            The AI Automation team brings together experts in workflow automation, AI implementation, and professional services transformation. With years of experience helping firms scale their operations through intelligent automation, we're committed to making advanced technology accessible to every professional services organization.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://twitter.com" class="text-purple-600 hover:text-purple-700 smooth-transition font-medium">
+                                <i class="fab fa-twitter mr-2"></i>Follow on Twitter
+                            </a>
+                            <a href="https://linkedin.com" class="text-purple-600 hover:text-purple-700 smooth-transition font-medium">
+                                <i class="fab fa-linkedin mr-2"></i>Connect on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-16 pt-8 border-t border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="#" class="group">
+                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg p-6 group-hover:shadow-lg smooth-transition">
+                            <div class="inline-block px-3 py-1 bg-purple-100 rounded-full mb-4">
+                                <span class="text-xs font-semibold text-purple-700">Automation</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 smooth-transition">
+                                5 Workflows Every Consulting Firm Should Automate
+                            </h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Discover the most impactful automation opportunities for consulting practices.
+                            </p>
+                            <span class="text-purple-600 font-medium text-sm">Read More →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="group">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 group-hover:shadow-lg smooth-transition">
+                            <div class="inline-block px-3 py-1 bg-green-100 rounded-full mb-4">
+                                <span class="text-xs font-semibold text-green-700">Implementation</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 smooth-transition">
+                                Building Your Automation Business Case
+                            </h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Learn how to calculate ROI and get stakeholder buy-in for automation projects.
+                            </p>
+                            <span class="text-green-600 font-medium text-sm">Read More →</span>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="group">
+                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 group-hover:shadow-lg smooth-transition">
+                            <div class="inline-block px-3 py-1 bg-blue-100 rounded-full mb-4">
+                                <span class="text-xs font-semibold text-blue-700">Best Practices</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 smooth-transition">
+                                Managing Change During Automation Implementation
+                            </h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Strategies for getting your team excited about automation initiatives.
+                            </p>
+                            <span class="text-blue-600 font-medium text-sm">Read More →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-16 p-8 md:p-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl text-white">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Firm?</h3>
+                <p class="text-lg text-gray-100 mb-6 leading-relaxed">
+                    Learn how AI automation can help your professional services firm scale operations, improve profitability, and deliver better client experiences.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://aia.com" class="inline-flex items-center justify-center px-8 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:shadow-lg smooth-transition hover-lift">
+                        Schedule a Demo
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="https://aia.com" class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 smooth-transition hover-lift">
+                        Start Free Trial
+                        <i class="fas fa-play ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">AI Automation</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Transforming professional services with intelligent automation powered by Claude.
+                    </p>
+                </div>
+                
+                <!-- Product -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white smooth-transition">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white smooth-transition">Benefits</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Pricing</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white smooth-transition">Contact</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Careers</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Privacy Policy</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Terms of Service</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Security</a></li>
+                        <li><a href="https://aia.com" class="text-gray-400 hover:text-white smooth-transition">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-8"></div>
+            
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-sm text-gray-400">
+                    &copy; 2024 AI Automation. All rights reserved. Powered by Claude (Anthropic).
+                </p>
+                
+                <div class="flex space-x-6">
+                    <a href="https://twitter.com" aria-label="Twitter" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://github.com" aria-label="GitHub" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                    <a href="https://facebook.com" aria-label="Facebook" class="text-gray-400 hover:text-white smooth-transition">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when a link is clicked
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+        
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
